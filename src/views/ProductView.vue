@@ -56,7 +56,7 @@ export default {
 
   created() {
     // 透過axios.get取得資料
-    this.$axios.get("https://my-json-server.typicode.com/Wayne-Chou/shopping/").then((res) => {
+    this.$axios.get("http://localhost:3000/products/").then((res) => {
       this.products = res.data;
     });
   },
