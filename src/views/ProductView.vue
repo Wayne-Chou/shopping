@@ -12,7 +12,7 @@
     <label for="pink">粉色</label>
     <input v-model="selectedColor" id="black" value="black" type="checkbox" />
     <label for="black">黑色</label>
-
+542752
     <select name="" id="select" v-model="selectedSort" @change="sortProducts">
       <option value="az">A到Z</option>
       <option value="za">Z到A</option>
