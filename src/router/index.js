@@ -1,25 +1,61 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { createRouter, createWebHashHistory } from "vue-router";
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
+    path: "/",
+    // 定義一開始的位置
+    redirect: "/ProductView",
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
-]
+    path: "/ProductView",
+    name: "ProductView",
+    component: () => import("../views/ProductView.vue"),
+  },
+  {
+    path: "/ProductDetail/:id",
+    name: "ProductDetail",
+    component: () => import("../views/ProductDetail.vue"),
+  },
+  {
+    path: "/LoginRegister",
+    name: "LoginRegister",
+    component: () => import("../views/LoginRegisterView.vue"),
+  },
+  {
+    path: "/Member",
+    name: "Member",
+    component: () => import("../views/MemberView.vue"),
+  },
+  {
+    path: "/Checkout/:id",
+    name: "Checkout",
+    component: () => import("../views/CheckoutView.vue"),
+  },
+  {
+    path: "/FavoriteView/:id",
+    name: "FavoriteView",
+    component: () => import("../views/FavoriteView.vue"),
+  },
+  {
+    path: "/OrderView",
+    name: "OrderView",
+    component: () => import("../views/OrderView.vue"),
+  },
+  {
+    path: "/Payment",
+    name: "Payment",
+    component: () => import("../views/PaymentView.vue"),
+  },
+  {
+    path: "/DeliverSeven",
+    name: "DeliverSeven",
+    component: () => import("../views/DeliverSeven.View.vue"),
+  },
+];
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
